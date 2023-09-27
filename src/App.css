@@ -1,0 +1,19 @@
+.link-home,
+.site-link{
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.siteBar{
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+}
+
+.site-link{
+    display: block;
+    width: 180px;
+    text-align: center;
+    padding: 10px;
+    border-bottom:1px solid whitesmoke;
+}
