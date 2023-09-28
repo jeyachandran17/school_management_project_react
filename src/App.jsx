@@ -13,6 +13,7 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
+import { Routes, Route, Link } from "react-router-dom";
 
 
 
@@ -29,6 +30,16 @@ function App() {
 function Application() {
   return (
     <div className="application-container">
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </div>
+  );
+}
+
+function Home() {
+  return (
+    <div className="home-container">
       <NavigationBar />
       <DashBoard />
     </div>
