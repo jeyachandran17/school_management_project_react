@@ -17,3 +17,32 @@
     padding: 10px;
     border-bottom:1px solid whitesmoke;
 }
+
+.dashboard-main-container{
+    display: flex;
+    background-color: whitesmoke;
+    min-height: 100vh;
+}
+
+.Dashboard-container{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+}
+
+.title-container{
+    display: flex;
+    gap: 20px;
+}
+
+.title-contant{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+img{
+    height: 350px;
+    min-width: 70px;
+}
