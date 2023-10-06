@@ -14,8 +14,15 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { Routes, Route, Link } from "react-router-dom";
-
-
+import TextField from '@mui/material/TextField';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
+import InputLabel from '@mui/material/InputLabel';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -32,6 +39,7 @@ function Application() {
     <div className="application-container">
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/admission" element={<Admission />} />
       </Routes>
     </div>
   );
@@ -51,7 +59,7 @@ function NavigationBar() {
     <div className="nav-container">
       <AppBar position="static">
         <Toolbar style={{borderBottom:" 1px solid whitesmoke"}}>
-          <a href="/" className='link-home' style={{marginLeft:"auto"}}>Home</a>
+          <Link to="/" className='link-home' style={{marginLeft:"auto"}}>Home</Link>
         </Toolbar>
       </AppBar>
     </div>
@@ -59,14 +67,16 @@ function NavigationBar() {
 }
 
 function SiteNavigationBar() {
+
   return (
     <div className="siteNavigationBar-container">
       <AppBar position="static" style={{width:"min-content", minHeight:"100vh"}}>
           <Toolbar className="siteBar">
-            <a href="/" className='site-link'>Teacher</a>
-            <a href="/" className='site-link'>Student</a>
-            <a href="/" className='site-link'>Books</a>
-            <a href="/" className='site-link'>Mark details</a>
+            <Link to="/admission" className='site-link'>Admission</Link>
+            <Link to="/" className='site-link'>Teacher</Link>
+            <Link to="/" className='site-link'>Student</Link>
+            <Link to="/" className='site-link'>Books</Link>
+            <Link to="/" className='site-link'>Mark details</Link>
           </Toolbar>
       </AppBar>
     </div>
@@ -146,6 +156,105 @@ function DashBoard() {
             </CardContent>   
           </div>
         </Card>
+      </div>
+    </div>
+  );
+}
+
+function Admission() {
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
+  return (
+    <div className="admission-container">
+      <div className="admission-nav">
+        <NavigationBar />
+      </div>
+      <div className="admission-contant">
+        <div className='admission-siteNav'>
+          <SiteNavigationBar />
+        </div>
+        <div className="admission-form-container">
+          <form action="" className='admission-form-control'>
+            <div className="filed">
+              <TextField id="outlined-basic" label="Student Name" variant="outlined" style={{width:"350px"}} />
+            </div>
+            <div className="filed">
+              <FormControl fullWidth>
+        <InputLabel id="demo-simple-select-label">Standrad</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          label="standard"
+          onChange={handleChange}
+        >
+          <MenuItem value="6th Standard">6<sup>th</sup></MenuItem>
+          <MenuItem value="7th Standard">7<sup>th</sup></MenuItem>
+          <MenuItem value="8th Standard">8<sup>th</sup></MenuItem>
+          <MenuItem value="9th Standard">9<sup>th</sup></MenuItem>
+          <MenuItem value="10th Standard">10<sup>th</sup></MenuItem>
+        </Select>
+      </FormControl>
+            </div>
+            <div className="filed" style={{display:"flex",alignItems:"center", gap:"10px", height:"50px"}}>
+              <FormLabel id="demo-row-radio-buttons-group-label">Gender</FormLabel>
+                <RadioGroup row aria-labelledby="demo-row-radio-buttons-group-label" name="row-radio-buttons-group">
+                  <FormControlLabel value="female" control={<Radio />} label="Female" />
+                  <FormControlLabel value="male" control={<Radio />} label="Male" />
+                  <FormControlLabel value="other" control={<Radio />} label="Other" />
+                </RadioGroup>
+            </div>
+            <div className="filed">
+              <TextField id="outlined-basic" label="Age" variant="outlined" style={{width:"100px"}} />
+            </div>
+            <div className="filed">
+              <TextField id="outlined-basic" label="Admission Number" variant="outlined" style={{width:"350px"}} />
+            </div>
+            <div className="filed">
+              <TextField id="outlined-basic" label="Register Number" variant="outlined" style={{width:"350px"}} />
+            </div>
+            <div className="filed">
+              <TextField id="outlined-basic" label="Aadher Number" variant="outlined" style={{width:"350px"}} />
+            </div>
+            <div className="filed">
+              <TextField id="outlined-basic" label="Blood Group" variant="outlined" style={{width:"350px"}} />
+            </div>
+            <div className="filed">
+              <TextField id="outlined-basic" label="Father Name" variant="outlined" style={{width:"350px"}} />
+            </div>
+            <div className="filed">
+              <TextField id="outlined-basic" label="Father's Profession" variant="outlined" style={{width:"350px"}} />
+            </div>
+            <div className="filed">
+              <TextField id="outlined-basic" label="Mother Name" variant="outlined" style={{width:"350px"}} />
+            </div>
+            <div className="filed">
+              <TextField id="outlined-basic" label="Mother's Profession" variant="outlined" style={{width:"350px"}} />
+            </div>
+            <div className="filed">
+              <TextField id="outlined-basic" label="Mole" variant="outlined" style={{width:"350px"}} />
+            </div>
+            <div className="filed">
+              <TextField id="outlined-basic" label="Scar" variant="outlined" style={{width:"350px"}} />
+            </div>
+            <div className="filed">
+              <TextField id="outlined-basic" label="Address" variant="outlined" style={{width:"350px"}} />
+            </div>
+            <div className="filed">
+              <TextField id="outlined-basic" label="Pincode" variant="outlined" style={{width:"350px"}} />
+            </div>
+            <div className="filed">
+              <TextField id="outlined-basic" label="Skill" variant="outlined" style={{width:"350px"}} />
+            </div>
+            <div className="filed">
+              <TextField id="outlined-basic" label="Mobile Number" variant="outlined" style={{width:"350px"}} />
+            </div>
+            <div className="filed">
+              <TextField id="outlined-basic" label="Email ID" variant="outlined" style={{width:"350px"}} />
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
