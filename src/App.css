@@ -49,19 +49,19 @@ img{
 
 .admission-contant{
     display: flex;
+    min-height: 100vh;
 }
 
 .admission-form-container{
     display: flex;
-    /* min-height: 100vh; */
+    flex-direction: column;
     width: 100%;
-    justify-content: center;
     padding: 20px;
 }
 
 .admission-form-control{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     gap: 20px;
 
@@ -71,4 +71,56 @@ img{
 .filed{
     display: flex;
     min-width: 120px;
+}
+
+.student-standard-container{
+    display: flex;
+    min-height: 80vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.student-standard-contant{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+.student-classlist{
+    display: flex;
+    min-width: 800px;
+    gap: 20px;
+    
+}
+
+.studenticon-container{
+    display: flex;
+    align-items: center;
+}
+
+.studenticon-img{
+    height: 200px;
+    width: 200px;
+}
+
+.student-classlist-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+}
+
+.classlist-view{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.teacherlist-container{
+    display: flex;
 }
